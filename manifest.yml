@@ -1,11 +1,10 @@
-declared-services:
-  my-text-to-speech:
-    label: text_to_speech
-    plan: standard
 applications:
-- services:
-  voicekalleservice
-  name: text-to-speech-demo
-  command: npm start
-  path: .
+- path: .
   memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: voicekalle
+  host: voicekalle
+  disk_quota: 1024M
+  services:
+  - voicekalleservice
