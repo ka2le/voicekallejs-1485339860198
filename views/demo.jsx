@@ -79,6 +79,7 @@ class ConditionalSpeakButton extends React.Component {
 export default React.createClass({
 
   getInitialState() {
+	console.log("getInitialState() demo.jsx");
     return {
       voice: voices[3], // Alisson is the first voice
       error: null, // the error from calling /classify
@@ -145,6 +146,7 @@ export default React.createClass({
   },
 
   onSpeak(event) {
+	console.log(" onSpeak(event) demo.jsx");
     event.target.blur();
     const params = this.setupParamsFromState(true);
     const audio = document.getElementById('audio');
@@ -154,10 +156,11 @@ export default React.createClass({
     this.setState({ loading: true, hasAudio: false });
     fetch(`/api/synthesize?${params.toString()}`).then((response) => {
       if (response.ok) {
+		
         response.blob().then((blob) => {
           const url = window.URL.createObjectURL(blob);
           this.setState({ loading: false, hasAudio: true });
-
+			
           audio.setAttribute('src', url);
           audio.setAttribute('type', 'audio/ogg;codecs=opus');
         });

@@ -21,6 +21,7 @@ const bodyParser = require('body-parser');
 const expressBrowserify = require('express-browserify');
 const path = require('path');
 const morgan = require('morgan');
+console.log("express.js");
 
 module.exports = function (app) {
   app.enable('trust proxy');

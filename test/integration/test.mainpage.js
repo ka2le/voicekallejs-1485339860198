@@ -15,6 +15,7 @@ casper.test.begin('Text To Speech', 16, function suite(test) {
   const baseHost = 'http://localhost:3000';
 
   function testForButtons() {
+	console.log("testForButtons() test.mainpage.js");
     casper.waitForSelector('div.buttons-container', function () {
       test.assertExists('button.base--button.speak-button', 'displays speak button');
       test.assertExists('button.base--button.download-button', 'displays download button');
