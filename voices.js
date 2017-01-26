@@ -249,6 +249,6 @@ const sortedByName = function (rhs, lhs) {
   }
   return result;
 };
-
+console.log("voices.js");
 const sortedvoices = voices.sort(sortedByName);
 module.exports = sortedvoices;
